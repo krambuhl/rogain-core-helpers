@@ -123,7 +123,7 @@ Number. Optional.
 
 ## Else
 
-_Implicit helper._  Can be used with `If`, `Unless`, `Empty`, `NonEmpty`, `range`.  Used to denote an inverse branch. 
+_Implicit helper._  Can be used with `If`, `Unless`, `Defined`, `Empty`, `Range`.  Used to denote an inverse branch. 
 
 ```html
 <If data={loggedIn} value="true">
@@ -133,12 +133,12 @@ _Implicit helper._  Can be used with `If`, `Unless`, `Empty`, `NonEmpty`, `range
 </If>
 
 <Unless data={loggedIn}><Else /></Unless>
+<Defined data={loggedIn}><Else /></Defined>
 <Empty data={loggedIn}><Else /></Empty>
-<NonEmpty data={loggedIn}><Else /></NonEmpty>
 <Range data={loggedIn}><Else /></Range>
 ```
 
-__Else helper meant to be called as a block, it's used to split trees inside other helpers.__
+__Else helper is not meant to be called as a block, it's used to split trees inside other helpers.__
 
 
 
