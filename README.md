@@ -102,11 +102,11 @@ Omitting `min` or `max` will default to `-Infinity` and `Infinity` respectively.
 <Repeat data={searchResults}>
     <Range data={@index} min="0" max="2">
         <!-- Top 3 -->
-        <h2>{@repeat.title}</h2>
-        <p>{@repeat.excerpt}</p>
+        <h2>{@item.title}</h2>
+        <p>{@item.excerpt}</p>
     <Else />
         <!-- The rest -->
-        <h3>{@repeat.title}</h3>
+        <h3>{@item.title}</h3>
     </Range>
 </Repeat>
 ```
