@@ -23,42 +23,6 @@ ___as___
 
 String. Defines the local variable for accessing each element in `data`. Defaults to `@item`.
 
-## If
-
-Returns it's children if `data` to `value` are equal. If the `<Else />` branch is defined, it will be returned when `data` and `value` are not equal.
-
-```html
-<If data={loggedIn} value="true"><Dashboard /></If>
-```
-
-__Attributes__
-
-___data___
-
-Variable or Expression.
-
-___value___
-
-Variable or Expression.
-
-## Unless
-
-Returns it's children if `data` to `value` are __not__ equal. If the `<Else />` branch is defined, it will be returned when `data` and `value` are equal.
-
-```html
-<Unless data={loggedIn} value="true"><LoginForm /></Unless>
-```
-
-__Attributes__
-
-___data___
-
-Variable or Expression.
-
-___value___
-
-Variable or Expression.
-
 ## Defined
 
 Returns children if `data` is an non-empty Array or Object (`[0, 1]`, `{x:1,y:3}`) or defined variable.  If the `<Else />` branch is defined, it will be returned when `data` is empty or undefined.
@@ -86,6 +50,47 @@ __Attributes__
 ___data___
 
 Variable or Expression.
+
+
+## If
+
+Returns it's children if `data` to `value` are equal. If the `<Else />` branch is defined, it will be returned when `data` and `value` are not equal.
+
+If `value` is not defined, `Unless` will have the same behavior as `Defined`.
+
+```html
+<If data={loggedIn} value="true"><Dashboard /></If>
+```
+
+__Attributes__
+
+___data___
+
+Variable or Expression.
+
+___value___
+
+Variable or Expression. Optional.
+
+## Unless
+
+Returns it's children if `data` to `value` are __not__ equal. If the `<Else />` branch is defined, it will be returned when `data` and `value` are equal.
+
+If `value` is not defined, `Unless` will have the same behavior as `Empty`.
+
+```html
+<Unless data={loggedIn} value="true"><LoginForm /></Unless>
+```
+
+__Attributes__
+
+___data___
+
+Variable or Expression.
+
+___value___
+
+Variable or Expression.  Optional.
 
 ## Range
 
