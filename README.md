@@ -99,7 +99,7 @@ Returns children if `data` is between `min` and `max`.  If the `<Else />` branch
 Omitting `min` or `max` will default to `-Infinity` and `Infinity` respectively.
 
 ```html
-<Repeat data={searchResults}>
+<Each data={searchResults}>
     <Range data={@index} min="0" max="2">
         <!-- Top 3 -->
         <h2>{@item.title}</h2>
@@ -108,7 +108,7 @@ Omitting `min` or `max` will default to `-Infinity` and `Infinity` respectively.
         <!-- The rest -->
         <h3>{@item.title}</h3>
     </Range>
-</Repeat>
+</Each>
 ```
 
 __Attributes__
