@@ -1,7 +1,7 @@
 {
   "name": "rogain-core-helpers",
-  "version": "0.1.0",
-  "description": "Render Rogain trees into html using string concatination.",
+  "version": "0.1.1",
+  "description": "Core helpers for Rogain templates.",
   "main": "dist/index.js",
   "scripts": {
     "build": "babel lib -d dist",
