@@ -1,6 +1,6 @@
 {
   "name": "rogain-core-helpers",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Core helpers for Rogain templates.",
   "main": "dist/index.js",
   "scripts": {
@@ -35,6 +35,6 @@
   },
   "dependencies": {
     "rogain-tree-utils": "^0.1.4",
-    "rogain-utils": "^0.1.1"
+    "rogain-utils": "^0.1.3"
   }
 }
