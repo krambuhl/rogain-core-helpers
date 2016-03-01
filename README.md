@@ -2,6 +2,14 @@
 
 Core helpers for Rogain templates.
 
+## Children
+
+Provides an outlet in a component that can be used to compose components.
+
+```html
+<div class="card"><Children /></div>
+```
+
 ## Each
 
 Returns a tree of the `data` mapped to children.  Each child can access the current element with the `@item` (or `as` attribute) properties and the current index with `@index`.
@@ -56,7 +64,7 @@ Variable or Expression.
 
 Returns it's children if `data` to `value` are equal. If the `<Else />` branch is defined, it will be returned when `data` and `value` are not equal.
 
-If `value` is not defined, `Unless` will have the same behavior as `Defined`.
+If `value` is not defined, `If` will have the same behavior as `Defined`.
 
 ```html
 <If data={loggedIn} value="true"><Dashboard /></If>
@@ -146,14 +154,12 @@ _Implicit helper._  Can be used with `If`, `Unless`, `Defined`, `Empty`, `Range`
 __Else helper is not meant to be called as a block, it's used to split trees inside other helpers.__
 
 
-
-
 ## Install 
 
 With [npm](https://www.npmjs.com) do:
 
 ```
-npm install rogain-lib-helpers
+npm install rogain-core-helpers
 ```
 
 ## License
