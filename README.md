@@ -2,15 +2,9 @@
 
 Core helpers for Rogain templates.
 
-## Children
+## Helpers
 
-Provides an outlet in a component that can be used to compose components.
-
-```html
-<div class="card"><Children /></div>
-```
-
-## Each
+### Each
 
 Returns a tree of the `data` mapped to children.  Each child can access the current element with the `@item` (or `as` attribute) properties and the current index with `@index`.
 
@@ -31,7 +25,7 @@ ___as___
 
 String. Defines the local variable for accessing each element in `data`. Defaults to `@item`.
 
-## Defined
+### Defined
 
 Returns children if `data` is an non-empty Array or Object (`[0, 1]`, `{x:1,y:3}`) or defined variable.  If the `<Else />` branch is defined, it will be returned when `data` is empty or undefined.
 
@@ -45,7 +39,7 @@ ___data___
 
 Variable or Expression.
 
-## Empty
+### Empty
 
 Returns children if `data` is an empty Array or Object (`[]`, `{}`) or undefined variable.  If the `<Else />` branch is defined, it will be returned when `data` is non-empty and defined.
 
@@ -60,7 +54,7 @@ ___data___
 Variable or Expression.
 
 
-## If
+### If
 
 Returns it's children if `data` to `value` are equal. If the `<Else />` branch is defined, it will be returned when `data` and `value` are not equal.
 
@@ -80,7 +74,7 @@ ___value___
 
 Variable or Expression. Optional.
 
-## Unless
+### Unless
 
 Returns it's children if `data` to `value` are __not__ equal. If the `<Else />` branch is defined, it will be returned when `data` and `value` are equal.
 
@@ -100,7 +94,7 @@ ___value___
 
 Variable or Expression.  Optional.
 
-## Range
+### Range
 
 Returns children if `data` is between `min` and `max`.  If the `<Else />` branch is defined, it will be returned when `data` is out of range. 
 
@@ -134,7 +128,7 @@ ___max___
 Number. Optional.
 
 
-## Else
+### Else
 
 _Implicit helper._  Can be used with `If`, `Unless`, `Defined`, `Empty`, `Range`.  Used to denote an inverse branch. 
 
@@ -152,6 +146,40 @@ _Implicit helper._  Can be used with `If`, `Unless`, `Defined`, `Empty`, `Range`
 ```
 
 __Else helper is not meant to be called as a block, it's used to split trees inside other helpers.__
+
+### Children
+
+Provides an outlet in a component that can be used to compose components.
+
+```html
+<div class="card"><Children /></div>
+```
+
+### Slot
+
+Provides multiple outlet slots for a component that can be used for layout type composition.
+
+```html
+<div>
+    <header><Slot name="header" /></header>
+    <footer><Slot name="footer" /></footer>
+</div>
+```
+
+```html
+<Card>
+    <Slot name="header">Gob Bluth</Slot>
+    <!-- { '@slot-header': { type: 'text', data: 'Gob Bluth' }} -->
+    <Slot name="footer">Bluth Family</Slot>
+</Card>
+```
+
+```html
+<div>
+    <header>Gob Bluth</header>
+    <footer>Bluth Family</footer>
+</div>
+```
 
 
 ## Install 
