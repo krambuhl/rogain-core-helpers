@@ -2,7 +2,7 @@ var test = require('tape');
 var Unless = require('../dist').Unless;
 
 var defTree = {
-  type: 'helper',
+  type: 'component',
   name: 'Unless',
   attrs: {},
   children: [{
@@ -44,7 +44,7 @@ test('<Unless data=123 value=789><div /><Else /><p /></Unless> :: equal', functi
   t.plan(3);
 
   var tree = Object.assign({ }, defTree, { data: 123, attrs: { value: 789 } });
-  tree.children.push({ type: 'helper', name: 'Else' });
+  tree.children.push({ type: 'component', name: 'Else' });
   tree.children.push({ type: 'tag', name: 'p' });
   var res = Unless(tree, { });
 
@@ -57,7 +57,7 @@ test('<Unless data=123 value=123><p /><Else /><div /></Unless> :: unequal else',
   t.plan(3);
 
   var tree = Object.assign({ }, defTree, { data: 123, attrs: { value: 123 } })
-  tree.children.unshift({ type: 'helper', name: 'Else' });
+  tree.children.unshift({ type: 'component', name: 'Else' });
   tree.children.unshift({ type: 'tag', name: 'p' });
   var res = Unless(tree, { });
 

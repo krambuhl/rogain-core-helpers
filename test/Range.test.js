@@ -2,7 +2,7 @@ var test = require('tape');
 var Range = require('../dist').Range;
 
 const defTree = {
-  type: 'helper',
+  type: 'component',
   name: 'Range',
   attrs: {},
   children: [{ type: 'tag', name: 'div' }]
@@ -26,7 +26,7 @@ test('<Range data={undefined}><div /><Else /><p /></Range>', function(t) {
     attrs: { }, 
     children: [
       { type: 'tag', name: 'div' },
-      { type: 'helper', name: 'Else' },
+      { type: 'component', name: 'Else' },
       { type: 'tag', name: 'p' }
     ]
   });
@@ -46,7 +46,7 @@ test('<Range data=123><div /><Else /><p /></Range>', function(t) {
     attrs: { }, 
     children: [
       { type: 'tag', name: 'div' },
-      { type: 'helper', name: 'Else' },
+      { type: 'component', name: 'Else' },
       { type: 'tag', name: 'p' }
     ]
   });
@@ -66,7 +66,7 @@ test('<Range data=123 min=500><div /><Else /><p /></Range>:: out of range', func
     attrs: { min: 500 }, 
     children: [
       { type: 'tag', name: 'div' },
-      { type: 'helper', name: 'Else' },
+      { type: 'component', name: 'Else' },
       { type: 'tag', name: 'p' }
     ]
   });
@@ -86,7 +86,7 @@ test('<Range data=123 max=500><div /><Else /><p /></Range>:: in range', function
     attrs: { max: 500 }, 
     children: [
       { type: 'tag', name: 'div' },
-      { type: 'helper', name: 'Else' },
+      { type: 'component', name: 'Else' },
       { type: 'tag', name: 'p' }
     ]
   });
@@ -106,7 +106,7 @@ test('<Range data=123 min=0 max=500><div /><Else /><p /></Range>:: in range', fu
     attrs: { min: 0, max: 500 }, 
     children: [
       { type: 'tag', name: 'div' },
-      { type: 'helper', name: 'Else' },
+      { type: 'component', name: 'Else' },
       { type: 'tag', name: 'p' }
     ]
   });

@@ -1,7 +1,7 @@
 var test = require('tape');
 
 const defTree = {
-  type: 'helper',
+  type: 'component',
   name: 'Each',
   attrs: { },
   children: [{ type: 'tag', name: 'div' }]
@@ -101,37 +101,6 @@ test('<Each data={nonEmptyObject}><div /></Each>', function(t) {
   t.equal(res[2].locals['@index'], 2);
   t.equal(res[2].locals['@key'], 'c');
   t.equal(res[2].locals['@item'], 'ccc');
-});
-
-
-var createLocals = require('../dist/Each').createLocals;
-
-test('tree.createLocals(a, 0) :: without attrs.as', function(t) {
-  t.plan(2);
-
-  var tree = Object.assign({ }, defTree, { 
-    data: ['a', 'b', 'c'], 
-    attrs: { }
-  });
-
-  var res = createLocals.call(tree, 'a', { hello: 'world' });
-
-  t.equal(res.hello, 'world');
-  t.equal(res['@item'], 'a');
-});
-
-test('tree.createLocals(a, 0) :: with attrs.as', function(t) {
-  t.plan(2);
-
-  var tree = Object.assign({ }, defTree, { 
-    data: ['a', 'b', 'c'], 
-    attrs: { as: 'letter' }
-  });
-
-  var res = createLocals.call(tree, 'a', { hello: 'world' });
-
-  t.equal(res.hello, 'world');
-  t.equal(res['letter'], 'a');
 });
 
 

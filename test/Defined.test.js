@@ -2,7 +2,7 @@ var test = require('tape');
 var Defined = require('../dist').Defined;
 
 var defTree = {
-  type: 'helper',
+  type: 'component',
   name: 'Defined',
   children: [{
     type: 'tag',
@@ -33,7 +33,7 @@ test('<Defined data={undefined}><Else /><div /></Defined>', function(t) {
   t.plan(3);
 
   var tree = Object.assign({ }, defTree, { data: undefined })
-  tree.children.unshift({ type: 'helper', name: 'Else' });
+  tree.children.unshift({ type: 'component', name: 'Else' });
   var res = Defined(tree, { });
 
   t.equal(res.length, 1);

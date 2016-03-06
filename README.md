@@ -4,6 +4,34 @@ Core helpers for Rogain templates.
 
 ## Helpers
 
+### Frame
+
+Alias and create inline variables.
+
+```html
+<Frame friend={@attrs.name} intro="My friend's name is">
+    <div>{intro} {friend}</div>
+</Frame>
+```
+
+```html
+<Friend name="Buckle" />
+```
+
+```html
+<div>My friend's name is Buckle</div>
+```
+
+
+### Children
+
+Provides an outlet in a component that can be used to compose components.
+
+```html
+<div class="card"><Children /></div>
+```
+
+
 ### Each
 
 Returns a tree of the `data` mapped to children.  Each child can access the current element with the `@item` (or `as` attribute) properties and the current index with `@index`.
@@ -147,15 +175,7 @@ _Implicit helper._  Can be used with `If`, `Unless`, `Defined`, `Empty`, `Range`
 
 __Else helper is not meant to be called as a block, it's used to split trees inside other helpers.__
 
-### Children
-
-Provides an outlet in a component that can be used to compose components.
-
-```html
-<div class="card"><Children /></div>
-```
-
-### Slot
+<!-- ### Slot
 
 Provides multiple outlet slots for a component that can be used for layout type composition.
 
@@ -169,7 +189,6 @@ Provides multiple outlet slots for a component that can be used for layout type 
 ```html
 <Card>
     <Slot name="header">Gob Bluth</Slot>
-    <!-- { '@slot-header': { type: 'text', data: 'Gob Bluth' }} -->
     <Slot name="footer">Bluth Family</Slot>
 </Card>
 ```
@@ -180,7 +199,7 @@ Provides multiple outlet slots for a component that can be used for layout type 
     <footer>Bluth Family</footer>
 </div>
 ```
-
+ -->
 
 ## Install 
 

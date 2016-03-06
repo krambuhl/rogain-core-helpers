@@ -2,7 +2,7 @@ var test = require('tape');
 var If = require('../dist').If;
 
 var defTree = {
-  type: 'helper',
+  type: 'component',
   name: 'If',
   attrs: {},
   children: [{
@@ -44,7 +44,7 @@ test('<If data=123 value=123><div /><Else /><p /></If> :: equal', function(t) {
   t.plan(3);
 
   var tree = Object.assign({ }, defTree, { data: 123, attrs: { value: 123 } });
-  tree.children.push({ type: 'helper', name: 'Else' });
+  tree.children.push({ type: 'component', name: 'Else' });
   tree.children.push({ type: 'tag', name: 'p' });
   var res = If(tree, { });
 
@@ -57,7 +57,7 @@ test('<If data=123 value=789><p /><Else /><div /></If> :: unequal else', functio
   t.plan(3);
 
   var tree = Object.assign({ }, defTree, { data: 123, attrs: { value: 789 } })
-  tree.children.unshift({ type: 'helper', name: 'Else' });
+  tree.children.unshift({ type: 'component', name: 'Else' });
   tree.children.unshift({ type: 'tag', name: 'p' });
   var res = If(tree, { });
 

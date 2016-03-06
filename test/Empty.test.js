@@ -2,7 +2,7 @@ var test = require('tape');
 var Empty = require('../dist').Empty;
 
 var defTree = {
-  type: 'helper',
+  type: 'component',
   name: 'Empty',
   children: [{
     type: 'tag',
@@ -33,7 +33,7 @@ test('<Empty data={undefined}><Else /><div /></Empty>', function(t) {
   t.plan(3);
 
   var tree = Object.assign({ }, defTree, { data: 'hello' })
-  tree.children.unshift({ type: 'helper', name: 'Else' });
+  tree.children.unshift({ type: 'component', name: 'Else' });
   var res = Empty(tree, { });
 
   t.equal(res.length, 1);

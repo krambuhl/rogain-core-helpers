@@ -23,7 +23,7 @@ test('splitTreeAtElse(tree) :: first', function(t) {
   var tree = Object.assign({ }, defTree, { 
     attrs: { }, 
     children: [
-      { type: 'helper', name: 'Else' },
+      { type: 'component', name: 'Else' },
       { type: 'tag', name: 'p' }
     ]
   });
@@ -45,7 +45,7 @@ test('splitTreeAtElse(tree) :: middle', function(t) {
     attrs: { }, 
     children: [
       { type: 'tag', name: 'div' },
-      { type: 'helper', name: 'Else' },
+      { type: 'component', name: 'Else' },
       { type: 'tag', name: 'p' }
     ]
   });
@@ -71,7 +71,7 @@ test('splitTreeAtElse(tree) :: end', function(t) {
     attrs: { }, 
     children: [
       { type: 'tag', name: 'div' },
-      { type: 'helper', name: 'Else' }
+      { type: 'component', name: 'Else' }
     ]
   });
 
@@ -92,7 +92,7 @@ test('splitTreeAtElse(tree) :: only', function(t) {
   var tree = Object.assign({ }, defTree, { 
     attrs: { }, 
     children: [
-      { type: 'helper', name: 'Else' }
+      { type: 'component', name: 'Else' }
     ]
   });
 
